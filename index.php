@@ -1,4 +1,5 @@
 <?php
+include 'partials/Header.php';
 ?>
 
 <section class="home" id="home">
@@ -9,4 +10,20 @@
     </div>
 </section>
 
-<section></section>
+<section>
+   category section
+</section>
+
+<section>
+    Featured Recipes
+    Spaghetti Carbonara
+    Category: Main Courses
+    Description: A classic Italian pasta dish with creamy egg sauce, pancetta, and Parmesan cheese.
+    Author: MariaD
+</section>
+
+
+<?php
+include 'partials/footer.php';
+?>
+
