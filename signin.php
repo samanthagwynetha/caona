@@ -24,11 +24,11 @@ if(isset($_SESSION['contributer_ID'])){
   <section class="form_section">
     <div class="container form_section-container">
       <h2>Sign In</h2>
-    <form action="login.php" method="POST" enctype="multipart/form-data">
+    <form action="signin.php" method="POST" enctype="multipart/form-data">
       <input type="text" name="signin-email" placeholder="Username or Email">
       <input type="password" name="signin-password" placeholder="Password">   
       <button type="submit" name="sign-in-btn" class="btn">Sign In</button>
-      <small>Don't have an account?<a href="register.php">Sign Up</a></small>
+      <small>Don't have an account?<a href="signup.php">Sign Up</a></small>
     </form>
   </section>
   

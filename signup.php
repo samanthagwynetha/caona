@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['customer_ID'])){
+if(isset($_SESSION['contributer_ID'])){
   header("Location: index.php");
 }
 ?>
@@ -23,13 +23,9 @@ if(isset($_SESSION['customer_ID'])){
 
 <section class="form_section">
   <div class="container form_section-container">
-    <h2>Sign Up</h2>
-    <div class="alert_message error">
-      <p>Error Message</p>
-    </div>
-    
+    <h2>Sign Up</h2>    
 
-  <form class="signup" action="register.php" method="POST" enctype="multipart/form-data">
+  <form class="signup" action="signup.php" method="POST" enctype="multipart/form-data">
     <input type="text" name="fname" placeholder="First Name">
     <input type="text" name="lname" placeholder="Last Name">
     <input type="email" name="email" placeholder="Email">
@@ -37,7 +33,7 @@ if(isset($_SESSION['customer_ID'])){
     <input type="password" name="cpassword" placeholder="Confirm Password">
 
     <button type="submit" name="sign-up-btn" class="btn">Sign Up</button>
-    <small>Already have an account? <a href="login.php">Sign In</a></small>
+    <small>Already have an account? <a href="signin.php">Sign In</a></small>
   </form>
 </div>
 </section>
@@ -94,10 +90,10 @@ if (count($errors) > 0) {
     }else{
       $sql = "CALL getContributerInfo('$fname','$lname','$email','$password')";
       if(mysqli_query($connection, $sql)){
-        header('location: '. ROOT_URL .'login.php');
+        header('location: '. ROOT_URL .'signin.php');
         die("Registered Successfully");
       }else{
-        header('location: '. ROOT_URL .'register.php');
+        header('location: '. ROOT_URL .'signup.php');
         die("something went wrong");
       }
     }
