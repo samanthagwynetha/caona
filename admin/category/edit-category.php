@@ -1,9 +1,9 @@
 <?php
   include '../partials/Header.php';
   session_start();
-if(!isset($_SESSION['admin_ID'])){
-  header('location: '. ROOT_URL .'admin/login.php');
-}
+// if(!isset($_SESSION['admin_ID'])){
+//   header('location: '. ROOT_URL .'admin/login.php');
+// }
 
   if(isset($_GET['categoryID'])){
     $categoryID = filter_var($_GET['categoryID'], FILTER_SANITIZE_NUMBER_INT);

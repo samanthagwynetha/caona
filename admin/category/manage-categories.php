@@ -1,9 +1,9 @@
 <?php
   include '../partials/Header.php';
   session_start();
-if(!isset($_SESSION['admin_ID'])){
-  header('location: '. ROOT_URL .'admin/login.php');
-}
+// if(!isset($_SESSION['admin_ID'])){
+//   header('location: '. ROOT_URL .'admin/login.php');
+// }
 
   //fetch categories from database
   $query = "SELECT * FROM category ORDER BY recipeType DESC";
@@ -58,31 +58,25 @@ if(!isset($_SESSION['admin_ID'])){
   <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
     <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button>
     <aside>
-    <ul>
-         <li>
-          <a href="add-recipe-post.php"><i class="uil uil-list-ul"></i>
+   <ul>
+      <li>
+          <a href="../recipe/add-recipe.php"><i class="uil uil-list-ul"></i>
             <h5>Add Recipe</h5>
           </a>
         </li>
         <li>
-          <a href="manage-recipe-post.php"><i class="uil uil-pen"></i>
+          <a href="../recipe/manage-recipe.php"><i class="uil uil-list-ul"></i>
             <h5>Manage Recipe</h5>
           </a>
         </li>
         <li>
-          <a href="add-category.php"><i class="uil uil-list-ul"></i>
+          <a href="../category/add-category.php"><i class="uil uil-list-ul"></i>
             <h5>Add Category</h5>
           </a>
         </li>
         <li>
-          <a href="manage-categories.php"><i class="uil uil-edit"></i>
+          <a href="../category/manage-categories.php"><i class="uil uil-edit"></i>
             <h5>Manage Category</h5>
-          </a>
-        </li>
-
-        <li>
-          <a href="customer-info.php"><i class="uil uil-user-plus"></i>
-            <h5>Contributer Info</h5>
           </a>
         </li>
       </ul>
@@ -110,7 +104,7 @@ if(!isset($_SESSION['admin_ID'])){
              
                <td> <a href="<?= ROOT_URL?>admin/category/delete-category.php?categoryID=<?= $category['categoryID']?>" class="btn sm danger">Delete</a>
                </td>
-             
+            
             </tr>
             <?php endwhile  ?>
           </tbody>

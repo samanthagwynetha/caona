@@ -1,5 +1,5 @@
 <?php
-include 'partials/Header.php';
+include '../partials/Header.php';
 session_start();
 
 // Include your database connection code here if not already included
@@ -19,26 +19,25 @@ $recipes = mysqli_query($connection, $recipe_query);
     <aside>
     <ul>
       <li>
-          <a href="recipe/add-recipe.php"><i class="uil uil-list-ul"></i>
+          <a href="../recipe/add-recipe.php"><i class="uil uil-list-ul"></i>
             <h5>Add Recipe</h5>
           </a>
         </li>
         <li>
-          <a href="recipe/manage-recipe.php"><i class="uil uil-list-ul"></i>
+          <a href="../recipe/manage-recipe.php"><i class="uil uil-list-ul"></i>
             <h5>Manage Recipe</h5>
           </a>
         </li>
         <li>
-          <a href="category/add-category.php"><i class="uil uil-list-ul"></i>
+          <a href="../category/add-category.php"><i class="uil uil-list-ul"></i>
             <h5>Add Category</h5>
           </a>
         </li>
         <li>
-          <a href="category/manage-categories.php"><i class="uil uil-edit"></i>
+          <a href="../category/manage-categories.php"><i class="uil uil-edit"></i>
             <h5>Manage Category</h5>
           </a>
         </li>
-
       </ul>
     </aside>
     <main>
@@ -82,5 +81,5 @@ $recipes = mysqli_query($connection, $recipe_query);
 </section>
 
 <?php
-  include '../partials/footer.php';
+  include '../../partials/footer.php';
 ?>
