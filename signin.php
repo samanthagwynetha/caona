@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['contributer_ID'])){
+if(isset($_SESSION['admin_ID'])){
   header("Location: index.php");
 }
 
@@ -28,7 +28,7 @@ if(isset($_SESSION['contributer_ID'])){
       <input type="text" name="signin-email" placeholder="Username or Email">
       <input type="password" name="signin-password" placeholder="Password">   
       <button type="submit" name="sign-in-btn" class="btn">Sign In</button>
-      <small>Don't have an account?<a href="signup.php">Sign Up</a></small>
+      <!-- <small>Don't have an account?<a href="signup.php">Sign Up</a></small> -->
     </form>
   </section>
   
@@ -43,32 +43,15 @@ if(isset($_SESSION['contributer_ID'])){
     $InEmail=trim($_POST['signin-email']);
     $InPassword=trim($_POST['signin-password']);
 
-    $sql="SELECT*FROM contributer WHERE cEmail='$InEmail'";
-    $result = mysqli_query($connection, $sql);
-    $contributer = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
     $sql="SELECT*FROM `admin` WHERE aEmail='$InEmail'";
     $result = mysqli_query($connection, $sql);
     $admin = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if ($contributer) {
-        if($InPassword==$contributer['cPassword']){
-            session_start();
-            $_SESSION['contributer_ID']=$contributer['contributerID'];
-            header('location: '. ROOT_URL .'index.php');
-            die();
-        }else{
-          echo '<script>alert("Password does not match");</script>';
-        }
-    }else{
-      echo '<script>alert("Email does not match");</script>';
-    }
-    
     if ($admin) {
       if($InPassword==$admin['aPassword']){
           session_start();
           $_SESSION['admin_ID']=$admin['adminID'];
-          header('location: '. ROOT_URL .'admin/index.php');
+          header('location: '. ROOT_URL .'index.php');
           die();
       }else{
         echo '<script>alert("Password does not match");</script>';

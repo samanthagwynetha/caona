@@ -5,14 +5,7 @@
         <a href="https://www.youtube.com/watch?v=a3Z7zEc7AXQ" target="blank"><i class="uil uil-instagram"></i></a>
       </div>
       <div class="container footer_container">
-        <article>
-          <h4>Categories</h4>
-          <ul>
-            <li><a href="">Desert</a></li>
-        
-       
-          </ul>
-        </article>
+    
         <article>
           <h4>Support</h4>
           <ul>
@@ -37,3 +30,8 @@
         <small>Copyright &copy; indians</small>
       </div>
     </footer>
+
+    <!--LINK TO JS-->
+<script src="<?= ROOT_URL?>js/main.js"></script>
+</body>
+</html>

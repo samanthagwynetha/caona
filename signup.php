@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['contributer_ID'])){
+if(isset($_SESSION['admin_ID'])){
   header("Location: index.php");
 }
 ?>
@@ -9,7 +9,7 @@ if(isset($_SESSION['contributer_ID'])){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Rental Website</title>
+  <title>Food</title>
 
   <!--Style-->
   <link rel="stylesheet" href="css/style.css">
@@ -57,46 +57,36 @@ if (isset($_POST['sign-up-btn'])){
   //validate input values
   $errors = array();
 
-if (empty($fname) || empty($lname) || empty($email) || empty($password) || empty($cpassword)) {
+  if (empty($fname) || empty($lname) || empty($email) || empty($password) || empty($cpassword)) {
     array_push($errors, "All fields are required");
-}
+  }
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     array_push($errors, "Email not valid");
-}
+  }
 
-if (strlen($password) < 8) {
+  if (strlen($password) < 8) {
     array_push($errors, "Password must be at least 8 characters long");
-}
+  }
 
-if ($password !== $cpassword) {
+  if ($password !== $cpassword) {
     array_push($errors, "Password does not match");
-}
+  }
 
-// Email already exists
-$sql = "SELECT * FROM contributer WHERE cEmail = '$email'";
-$result = mysqli_query($connection, $sql);
-$rowCount = mysqli_num_rows($result);
+  // Email already exists
+  $sql = "SELECT * FROM admin WHERE aEmail = '$email'";
+  $result = mysqli_query($connection, $sql);
+  $rowCount = mysqli_num_rows($result);
 
-if ($rowCount > 0) {
+  if ($rowCount > 0) {
     array_push($errors, "Email already exists!");
-}
+  }
 
-// Display errors
-if (count($errors) > 0) {
+  // Display errors
+  if (count($errors) > 0) {
     foreach ($errors as $error) {
         echo '<script>alert("' . $error . '");</script>';
     }
-    }else{
-      $sql = "CALL getContributerInfo('$fname','$lname','$email','$password')";
-      if(mysqli_query($connection, $sql)){
-        header('location: '. ROOT_URL .'signin.php');
-        die("Registered Successfully");
-      }else{
-        header('location: '. ROOT_URL .'signup.php');
-        die("something went wrong");
-      }
-    }
-}else{
-}
+  
+  }}
 ?>

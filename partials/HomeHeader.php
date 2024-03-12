@@ -1,5 +1,5 @@
 <?php
-require '../config/database.php';
+require 'config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,19 +22,25 @@ require '../config/database.php';
     <div class="container nav_container">
       <a href="<?= ROOT_URL ?>" class="nav_logo">Caona</a>
       <ul class="nav_items">
-        <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
+        <li><a href="#home-recipes">Recipe</a></li>
+        <li><a href=#home-about>About Us</a></li>
+        <li><a href=#home-contact>Contact Us</a></li>
+        <li><a href="<?= ROOT_URL ?>signin.php">Admin</a></li>
         <li class="nav_profile">
-          <div class="header-icon">
-             <i class="uil uil-bars"></i>
+          <!-- <div class="avatar">
+            <img src="images/admin.jpg">
           </div>
           <ul>
-            <li><a href="<?= ROOT_URL ?>admin/alogout.php">Logout</a></li>
+            <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
+            <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
           </li>
-        </ul>
+       
+   
+          </ul>
         </ul>
 
       <button id="open_nav-btn"><i class="uil uil-bars"></i></button>
       <button id="close_nav-btn"><i class="uil uil-multiply"></i></button>
-    </div>
+    </div> -->
   </nav>
  <!--===================END OF NAV==============================================-->
