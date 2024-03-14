@@ -1,5 +1,5 @@
 <?php
-require '../config/database.php';
+require 'config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,10 +7,10 @@ require '../config/database.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caona</title>
+  <title>CAONA</title>
 
   <!--Style-->
-    <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css">
+    <link rel="stylesheet" href="<?= ROOT_URL ?>css/cusdash.css">
     <!--Icon-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <!--FONTS-->
@@ -20,15 +20,18 @@ require '../config/database.php';
 <body>
   <nav>
     <div class="container nav_container">
-      <a href="<?= ROOT_URL ?>" class="nav_logo">Caona</a>
+    <a href="<?= ROOT_URL ?>" class="nav_logo">CAONA</a>
       <ul class="nav_items">
-        <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
-        <li class="nav_profile">
-          <div class="header-icon">
-             <i class="uil uil-bars"></i>
+        <li><a href="#home-recipes">Recipe</a></li>
+        <li><a href=#home-about>About Us</a></li>
+        <li><a href=#home-contact>Contact Us</a></li>
+       <li class="nav_profile">
+          <div class="avatar">
+            <img src="images/admin.jpg">
           </div>
           <ul>
-            <li><a href="<?= ROOT_URL ?>admin/alogout.php">Logout</a></li>
+            <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
+            <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
           </li>
         </ul>
         </ul>

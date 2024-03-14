@@ -7,7 +7,7 @@ require 'config/database.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Recipe Website</title>
+  <title>Caona</title>
 
   <!--Style-->
     <link rel="stylesheet" href="<?= ROOT_URL ?>css/style.css">
@@ -20,15 +20,23 @@ require 'config/database.php';
 <body>
   <nav>
     <div class="container nav_container">
-      <a href="<?= ROOT_URL ?>" class="nav_logo">Food Recipe Website</a>
+    <a href="<?= ROOT_URL ?>" class="nav_logo">Caona</a>
+
       <ul class="nav_items">
-        <li><a href=#home>Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href=#home-about>About Us</a></li>
-        <li><a href="#home-services">Services</a></li>
+        <li><a href="#home-recipes">Recipe</a></li>
         <li><a href=#home-contact>Contact Us</a></li>
-        <li><a href="<?= ROOT_URL ?>signin.php">Sign In</a></li>
-        <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
-     
+        <!-- <li><a href="<?= ROOT_URL ?>signin.php">Sign In</a></li> -->
+        <li class="nav_profile">
+          <div class="header-icon">
+           <i class="uil uil-bars"></i>
+          </div>
+          <ul>
+            <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
+            <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
+          </li>
+       
    
           </ul>
         </ul>

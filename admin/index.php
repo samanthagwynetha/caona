@@ -17,8 +17,8 @@ $recipes = mysqli_query($connection, $recipe_query);
     <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
     <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button>
     <aside>
-    <ul>
-      <li>
+      <ul>
+        <li>
           <a href="recipe/add-recipe.php"><i class="uil uil-list-ul"></i>
             <h5>Add Recipe</h5>
           </a>
@@ -38,49 +38,18 @@ $recipes = mysqli_query($connection, $recipe_query);
             <h5>Manage Category</h5>
           </a>
         </li>
-
       </ul>
     </aside>
-    <main>
-       <h2>Manage recipe</h2>
-       <table>
-          <thead>
-            <tr>
+<main>
+  <h2>Welcome, Admin!</h2>
+  <div class="gif-container">
+    <img class="gif" src="https://media4.giphy.com/media/xUA7bjfr8Q1BB3LbJm/giphy.gif" alt="GIF" />
+  </div>
+</main>
 
-              <th>Title</th>
-              <th>Description</th>
-              <th>Ingredients</th>
-              <th>Instructions</th>
-              <th>Category</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php while ($recipe = mysqli_fetch_assoc($recipes)) : ?>
-            <tr>
-              <td><?= $recipe['title'] ?></td>
-              <td><?= $recipe['rDescription'] ?></td>
-              <td><?= $recipe['ingredients'] ?></td>
-              <td><?= $recipe['instructions'] ?></td>
-              <td><?= $recipe['recipeType'] ?></td>
-              <!--<td>
-                <select name="status_<?= $recipe['recipeID'] ?>">
-                  <option value="available" <?= ($recipe['Availability'] == '1') ? 'selected' : '' ?>>Available</option>
-                  <option value="unavailable" <?= ($recipe['Availability'] == '0') ? 'selected' : '' ?>>Unavailable</option>
-                </select>
-              </td>-->
-              
-              <td><a href="edit-recipe.php?recipeID=<?= $recipe['recipeID'] ?>" class="btn sm">Edit</a></td>
-              <td><a href="delete-recipe.php?recipeID=<?= $recipe['recipeID'] ?>" class="btn sm danger">Delete</a></td>
-            </tr>
-            <?php endwhile ?>
-          </tbody>
-       </table>
-    </main>
   </div>
 </section>
 
 <?php
-  include '../partials/footer.php';
+include '../partials/footer.php';
 ?>

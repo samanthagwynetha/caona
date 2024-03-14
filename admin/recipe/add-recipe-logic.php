@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $time = time();
         $rImage_name = $time . $rImage['name'];
         $rImage_tmp_name = $rImage['tmp_name'];
-        $rImage_destination_path = '../images/' . $rImage_name;
+        $rImage_destination_path = '../../images/' . $rImage_name;
 
         // Make sure file is an image
         $allowed_extensions = ['png', 'jpg', 'jpeg'];

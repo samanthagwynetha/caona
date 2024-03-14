@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if(isset($_SESSION['customer_ID'])){
-  include 'partials/aheader.php'; // Include admin header if an admin is logged in
+if(isset($_SESSION['adminID'])){
+  include '../partials/aheader.php'; // Include admin header if an admin is logged in
 } else {
-  include 'partials/Header.php'; // Include regular header for non-admin users
+  include 'partials/HomeHeader.php'; // Include regular header for non-admin users
 }
 
 // Fetch recipes
@@ -32,7 +32,6 @@ $recipes = mysqli_query($connection, $query);
 
 
 <!--===========================ABOUT==================================-->
-
 <section class="home-about" id="home-about">
   <div class="about-img">
     <img src="images/about-img.jpg" alt="">
@@ -72,7 +71,6 @@ $recipes = mysqli_query($connection, $query);
 <?php endwhile ?>
 
   </div>
-  
 </section>
 
 <!--=======================CONTACT====================-->
@@ -104,14 +102,13 @@ $recipes = mysqli_query($connection, $query);
         <input type="text" name="Name" placeholder="Full Name" required>
         <input type="email" name="Email" placeholder="Email" required>
         <textarea name="Message" placeholder="Message" required></textarea>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Send</button>
     </form>
   </div>
 </section>
 
 <!--=======================CATEGORY BUTTON====================-->
 <section class="category_buttons">
-  <h2>Categories</h2>
     <div class="container category_buttons-container">
         <?php
         $all_categories_query = "SELECT * FROM category";
@@ -126,7 +123,5 @@ $recipes = mysqli_query($connection, $query);
 </section>
 
 <!--=======================END OF THE CATEGORY BUTTON====================-->
-
-
 
 <?php include 'partials/footer.php'; ?>

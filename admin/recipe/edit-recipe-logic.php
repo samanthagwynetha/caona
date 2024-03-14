@@ -18,7 +18,7 @@ require '../config/database.php';
         } else {
          // Delete existing thumbnail if available
          if ($thumbnail['name']) {
-            $previous_thumbnail_path = '../images/' . $previous_thumbnail_name;
+            $previous_thumbnail_path = '../../images/' . $previous_thumbnail_name;
             if (file_exists($previous_thumbnail_path)) {
                 unlink($previous_thumbnail_path);
             }
@@ -28,7 +28,7 @@ require '../config/database.php';
             $time = time(); // Make each image name unique
             $thumbnail_name = $time . $thumbnail['name'];
             $thumbnail_tmp_name = $thumbnail['tmp_name'];
-            $thumbnail_destination_path = '../images/' . $thumbnail_name;
+            $thumbnail_destination_path = '../../images/' . $thumbnail_name;
 
             // Make sure the file is an image
             $allowed_extensions = ['png', 'jpg', 'jpeg'];

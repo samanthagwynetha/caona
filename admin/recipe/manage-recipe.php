@@ -63,13 +63,7 @@ $recipes = mysqli_query($connection, $recipe_query);
               <td><?= $recipe['ingredients'] ?></td>
               <td><?= $recipe['instructions'] ?></td>
               <td><?= $recipe['recipeType'] ?></td>
-              <!--<td>
-                <select name="status_<?= $recipe['recipeID'] ?>">
-                  <option value="available" <?= ($recipe['Availability'] == '1') ? 'selected' : '' ?>>Available</option>
-                  <option value="unavailable" <?= ($recipe['Availability'] == '0') ? 'selected' : '' ?>>Unavailable</option>
-                </select>
-              </td>-->
-              
+                 
               <td><a href="edit-recipe.php?recipeID=<?= $recipe['recipeID'] ?>" class="btn sm">Edit</a></td>
               <td><a href="delete-recipe.php?recipeID=<?= $recipe['recipeID'] ?>" class="btn sm danger">Delete</a></td>
             </tr>
